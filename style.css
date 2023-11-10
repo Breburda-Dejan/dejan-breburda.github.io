@@ -1,0 +1,39 @@
+html, body {
+    overflow: hidden;
+
+
+}
+
+body {
+  background-image: url("https://static.owayo-cdn.com/newhp/img/magazin/fussballfeld/fussballfeld-670.jpg");
+    background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .button {
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        border: 2px solid black;
+        font-size: 36px;
+        color: black;
+        text-align: center;
+        line-height: 100px;
+    }
+
+    h1{
+        text-align: center;
+        color: white;
+        text-shadow: 4px 4px black;
+        font-size: 80px;
+    }
+
+    #myCanvas {
+        position: absolute;
+        z-index: -1;
+    }
