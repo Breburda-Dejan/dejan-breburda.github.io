@@ -20,7 +20,7 @@ class Game{
         this.players = [];
         this.goals = [];
         this.ball = null;
-        this.time = 5;
+        this.time = 50;
         this.timer = null;
         this.posp1={x:70,y:0};
         this.posp2={x:(this.width/8)*7,y:0};
