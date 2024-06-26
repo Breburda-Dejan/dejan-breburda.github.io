@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejan Breburda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="stars"></div>
+    
+    <div id="main-info" class="info-box">
+        <h1 id="title" class="color-transition">Dejan Breburda</h1>
+        <p id="age"></p>
+        <p>Birthday: 29.01.2006</p>
+		<p>Location: Austria</p>
+    </div>
+
+    <div id="description" class="info-box">
+        <h2 id="about" class="color-transition">About Me</h2>
+        <p>Hallo! Ich bin Dejan Breburda, 18 Jahre alt und lebe in Österreich. Ich besuche noch die Schule und programmiere leidenschaftlich gerne in meiner Freizeit. Mein Fokus liegt auf Python, aber ich arbeite auch mit anderen Programmiersprachen wie Javascript, <br>C++, C, C# und Java. Programmieren ist nicht nur ein Hobby für mich, sondern auch eine Möglichkeit, kreative Lösungen für komplexe Probleme zu finden. Ich freue mich darauf, neue Technologien zu erkunden und innovative Projekte zu realisieren.</p>
+    </div>
+
+    <div id="projects" class="info-box">
+        <h2 id="projects-title" class="color-transition">My Projects</h2>
+        <a href="https://github.com/Breburda-Dejan/yloponoM" class="button icon-py">Monopoly</a>
+    </div>
+
+    <script>
+        function calculateAge(birthdate) {
+            const today = new Date();
+            const birthDate = new Date(birthdate);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        document.getElementById('age').textContent = `Age: ${calculateAge('2006-01-29')}`;
+
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 500; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = `${Math.random() * 2 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.opacity = Math.random();
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function createShootingStar() {
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            const angle = Math.random() * 360;
+            const speed = 100 + Math.random() * 200;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.width = `${Math.random() * 50 + 100}px`;
+            star.style.transform = `rotate(${angle}deg)`;
+            
+            star.animate([
+                { opacity: 1, transform: `rotate(${angle}deg) translateX(0)` },
+                { opacity: 0, transform: `rotate(${angle}deg) translateX(${speed}px)` }
+            ], {
+                duration: 1000,
+                easing: 'linear',
+                iterations: 1
+            });
+
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 1000);
+        }
+
+        function changeTextColor() {
+            const titles = document.querySelectorAll('.color-transition');
+            const r = Math.floor(Math.random() * 100);
+            const g = Math.floor(Math.random() * 150 + 100);
+            const b = Math.floor(Math.random() * 155 + 100);
+            const color = `rgb(${r},${g},${b})`;
+            titles.forEach(title => {
+                title.style.color = color;
+                title.style.textShadow = `0 0 10px rgba(${r}, ${g}, ${b}, 0.7)`;
+            });
+        }
+
+        createStars();
+        setInterval(changeTextColor, 20000);
+        setInterval(createShootingStar, Math.random() * 10000 + 20000);
+
+        changeTextColor();
+    </script>
+</body>
+</html>
