@@ -13,19 +13,17 @@
         <h1 id="title" class="color-transition">Dejan Breburda</h1>
         <p id="age"></p>
         <p>Birthday: 29.01.2006</p>
-		<p>Location: Österreich</p>
+		<p>Location: Austria</p>
     </div>
 
     <div id="description" class="info-box">
         <h2 id="about" class="color-transition">About Me</h2>
-        <p>Hallo! Ich bin Dejan Breburda, 18 Jahre alt und lebe in Österreich. Ich besuche noch die Schule und programmiere leidenschaftlich gerne in meiner Freizeit. Mein Fokus liegt auf Python, aber ich arbeite auch mit anderen Programmiersprachen wie Rust, C++, C, C# und Java. Programmieren ist nicht nur ein Hobby für mich, sondern auch eine Möglichkeit, kreative Lösungen für komplexe Probleme zu finden. Ich freue mich darauf, neue Technologien zu erkunden und innovative Projekte zu realisieren.</p>
+        <p>Hallo! Ich bin Dejan Breburda, 18 Jahre alt und lebe in Österreich. Ich besuche noch die Schule und programmiere leidenschaftlich gerne in meiner Freizeit. Mein Fokus liegt auf Python, aber ich arbeite auch mit anderen Programmiersprachen wie Javascript, <br>C++, C, C# und Java. Programmieren ist nicht nur ein Hobby für mich, sondern auch eine Möglichkeit, kreative Lösungen für komplexe Probleme zu finden. Ich freue mich darauf, neue Technologien zu erkunden und innovative Projekte zu realisieren.</p>
     </div>
 
     <div id="projects" class="info-box">
         <h2 id="projects-title" class="color-transition">My Projects</h2>
-        <a href="#" class="button">Project 1</a>
-        <a href="#" class="button">Project 2</a>
-        <a href="#" class="button">Project 3</a>
+        <a href="https://github.com/Breburda-Dejan/yloponoM" class="button icon-py">Monopoly</a>
     </div>
 
     <script>
@@ -44,7 +42,7 @@
 
         function createStars() {
             const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 200; i++) {
+            for (let i = 0; i < 500; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 star.style.width = `${Math.random() * 2 + 1}px`;
