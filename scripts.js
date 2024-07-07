@@ -65,6 +65,7 @@ function calculateAge(birthdate) {
 		let cursorx = -2000;
 		let cursory = -2000;
 		const maxfeet = 10;
+		const maxconnections = 10;
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -76,13 +77,15 @@ function calculateAge(birthdate) {
                 const dyc = particles[i].y - cursory;
 				const distancec = Math.sqrt(dxc * dxc + dyc * dyc);
                 
+				let currentconnections = 0;
                 for (let j = i; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
 					
                     
-                    if (distance < 200) {
+                    if (distance < 200 && currentconnections < maxconnections) {
+						currentconnections ++;
                         ctx.beginPath();
                         ctx.strokeStyle = particles[i].color;
                         ctx.lineWidth = Math.max(0.03,1-distance/100);
