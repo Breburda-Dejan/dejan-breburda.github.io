@@ -22,7 +22,10 @@ function calculateAge(birthdate) {
         canvas.height = window.innerHeight;
 
         const particles = [];
-        const particleCount = 250;
+		
+		function particleCount(){
+			return Math.round((window.innerWidth / 1000)* 200);
+		}
 
         class Particle {
             constructor() {
@@ -54,13 +57,13 @@ function calculateAge(birthdate) {
 
         function createParticles() {
 			particles.length = 0;
-            for (let i = 0; i < particleCount; i++) {
+            for (let i = 0; i < particleCount(); i++) {
                 particles.push(new Particle());
             }
         }
 		
-		let cursorx = -200;
-		let cursory = -200;
+		let cursorx = -2000;
+		let cursory = -2000;
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -78,10 +81,10 @@ function calculateAge(birthdate) {
                     const distance = Math.sqrt(dx * dx + dy * dy);
 					
                     
-                    if (distance < 100) {
+                    if (distance < 150) {
                         ctx.beginPath();
                         ctx.strokeStyle = particles[i].color;
-                        ctx.lineWidth = 0.2;
+                        ctx.lineWidth = Math.max(0.05,1-distance/100);
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
@@ -89,13 +92,13 @@ function calculateAge(birthdate) {
                 }
 				
 				if (distancec < 100) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = particles[i].color;
-                        ctx.lineWidth = 0.2;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(cursorx+10, cursory+10);
-                        ctx.stroke();
-                    }
+					ctx.beginPath();
+					ctx.strokeStyle = particles[i].color;
+					ctx.lineWidth = Math.max(0.1,1-distancec/100);
+					ctx.moveTo(particles[i].x, particles[i].y);
+					ctx.lineTo(cursorx+(25*Math.max(0.4,(cursorx/canvas.width))), cursory+10);
+					ctx.stroke();
+				}
 
                 if (particles[i].size <= 0.2) {
                     particles.splice(i, 1);
@@ -126,15 +129,15 @@ function calculateAge(birthdate) {
         document.querySelectorAll('body').forEach(section => {
             section.addEventListener('mouseenter', () => {
                 cursor.style.transform = 'scale(1)';
-                cursor.style.width = '20px';
-                cursor.style.height = '20px';
+                cursor.style.width = '15px';
+                cursor.style.height = '15px';
             });
             section.addEventListener('mouseleave', () => {
                 cursor.style.transform = 'scale(0)';
                 cursor.style.width = '0px';
                 cursor.style.height = '0px';
-				cursorx = -200;
-				cursory = -200;
+				cursorx = -2000;
+				cursory = -2000;
             });
         });
         window.addEventListener('load', () => {
