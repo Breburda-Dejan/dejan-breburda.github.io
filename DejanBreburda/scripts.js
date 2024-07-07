@@ -64,10 +64,11 @@ function calculateAge(birthdate) {
 		
 		let cursorx = -2000;
 		let cursory = -2000;
+		const maxfeet = 10;
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+            let currentfeet = 0;
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
@@ -81,20 +82,21 @@ function calculateAge(birthdate) {
                     const distance = Math.sqrt(dx * dx + dy * dy);
 					
                     
-                    if (distance < 150) {
+                    if (distance < 200) {
                         ctx.beginPath();
                         ctx.strokeStyle = particles[i].color;
-                        ctx.lineWidth = Math.max(0.05,1-distance/100);
+                        ctx.lineWidth = Math.max(0.03,1-distance/100);
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
                     }
                 }
 				
-				if (distancec < 100) {
+				if (distancec < 150 && currentfeet < maxfeet) {
+					currentfeet	++;
 					ctx.beginPath();
 					ctx.strokeStyle = particles[i].color;
-					ctx.lineWidth = Math.max(0.1,1-distancec/100);
+					ctx.lineWidth = Math.max(0.2,1-distancec/60);
 					ctx.moveTo(particles[i].x, particles[i].y);
 					ctx.lineTo(cursorx+(25*Math.max(0.4,(cursorx/canvas.width))), cursory+10);
 					ctx.stroke();
