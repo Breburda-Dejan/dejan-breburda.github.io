@@ -76,7 +76,7 @@ h1, h2 {
 button{
 	background-color: rgba(130, 130, 130, 0.9);
     padding: 5px;
-    border-radius: 15px;
+    border-radius: 3px;
     margin-bottom: 3px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -85,7 +85,7 @@ button{
 }
 
 button:hover{
-	transform: translateY(-5px);
+	transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
