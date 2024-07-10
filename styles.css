@@ -73,6 +73,22 @@ h1, h2 {
     animation: gradient-shift 8s infinite alternate;
 }
 
+button{
+	background-color: rgba(130, 130, 130, 0.9);
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 3px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+	text-color: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(9px);
+}
+
+button:hover{
+	transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 @keyframes gradient-shift {
     0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
