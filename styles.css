@@ -89,6 +89,10 @@ h1, h2 {
     animation: gradient-shift 8s infinite alternate;
 }
 
+.storytitle{
+	text-align: center;
+}
+
 button{
 	background-color: rgba(130, 130, 130, 0.0);
     padding: 5px;
