@@ -9,6 +9,7 @@ function submit(){
 	var interactivity = document.querySelector('input[name="interactivity"]:checked');
 	
 	if (!(design === null || creativity === null || userfriendliness === null || quality === null || interactivity === null)){
+		/// TODO: send data to server
 		window.location.replace("thanks.html")
 	}
 	else{
