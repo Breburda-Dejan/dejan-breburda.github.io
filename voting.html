@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+	
+</head>
+<body>
+	<script src="particles.js" defer></script>
+	<script src="voting.js" defer></script>
+    <canvas id="canvas-background"></canvas>
+    <div id="interactive-cursor"></div>
+    <div class="container">
+        <h1 class="gradient-text" style="font-size:60px;">Gib mir Feedback</h1>
+        <div class="section">
+		
+			<div class="feedback-container">
+				<label class="gradient-text">Design:</label>
+				<div class="stars">
+					<input type="radio" id="design1" name="design" value="5"><label for="design1">&#9733;</label>
+					<input type="radio" id="design2" name="design" value="4"><label for="design2">&#9733;</label>
+					<input type="radio" id="design3" name="design" value="3"><label for="design3">&#9733;</label>
+					<input type="radio" id="design4" name="design" value="2"><label for="design4">&#9733;</label>
+					<input type="radio" id="design5" name="design" value="1"><label for="design5">&#9733;</label>
+				</div>
+			</div>
+			
+			<div class="feedback-container">
+				<label class="gradient-text">Kreativität:</label>
+				<div class="stars">
+					<input type="radio" id="creativity1" name="creativity" value="5"><label for="creativity1">&#9733;</label>
+					<input type="radio" id="creativity2" name="creativity" value="4"><label for="creativity2">&#9733;</label>
+					<input type="radio" id="creativity3" name="creativity" value="3"><label for="creativity3">&#9733;</label>
+					<input type="radio" id="creativity4" name="creativity" value="2"><label for="creativity4">&#9733;</label>
+					<input type="radio" id="creativity5" name="creativity" value="1"><label for="creativity5">&#9733;</label>
+				</div>
+			</div>
+			
+			<div class="feedback-container">
+				<label class="gradient-text">Benutzerfreundlichkeit:</label>
+				<div class="stars">
+					<input type="radio" id="userfriendliness1" name="userfriendliness" value="5"><label for="userfriendliness1">&#9733;</label>
+					<input type="radio" id="userfriendliness2" name="userfriendliness" value="4"><label for="userfriendliness2">&#9733;</label>
+					<input type="radio" id="userfriendliness3" name="userfriendliness" value="3"><label for="userfriendliness3">&#9733;</label>
+					<input type="radio" id="userfriendliness4" name="userfriendliness" value="2"><label for="userfriendliness4">&#9733;</label>
+					<input type="radio" id="userfriendliness5" name="userfriendliness" value="1"><label for="userfriendliness5">&#9733;</label>
+				</div>
+			</div>
+			
+			<div class="feedback-container">
+				<label class="gradient-text">Inhaltliche Qualität:</label>
+				<div class="stars">
+					<input type="radio" id="quality1" name="quality" value="5"><label for="quality1">&#9733;</label>
+					<input type="radio" id="quality2" name="quality" value="4"><label for="quality2">&#9733;</label>
+					<input type="radio" id="quality3" name="quality" value="3"><label for="quality3">&#9733;</label>
+					<input type="radio" id="quality4" name="quality" value="2"><label for="quality4">&#9733;</label>
+					<input type="radio" id="quality5" name="quality" value="1"><label for="quality5">&#9733;</label>
+				</div>
+			</div>
+			
+			<div class="feedback-container">
+				<label class="gradient-text">Interaktivität:</label>
+				<div class="stars">
+					<input type="radio" id="interactivity1" name="interactivity" value="5"><label for="interactivity1">&#9733;</label>
+					<input type="radio" id="interactivity2" name="interactivity" value="4"><label for="interactivity2">&#9733;</label>
+					<input type="radio" id="interactivity3" name="interactivity" value="3"><label for="interactivity3">&#9733;</label>
+					<input type="radio" id="interactivity4" name="interactivity" value="2"><label for="interactivity4">&#9733;</label>
+					<input type="radio" id="interactivity5" name="interactivity" value="1"><label for="interactivity5">&#9733;</label>
+				</div>
+			</div>
+			
+			<div class="feedback-container">
+				<label class="gradient-text">Wollen Sie mir noch etwas mitteilen? (Optional)</label><br>
+				<textarea id="feedbackText" placeholder="Bitte geben Sie hier Ihr Feedback ein..."></textarea>
+			</div>
+			
+			<div class="feedback-container">
+				<button class="gradient-text submitbutton" onclick="submit()">Absenden</button>
+			</div>
+			
+			<div class="feedback-container" id="error" style="color:red;">
+			</div>
+		</div>
+    </div>
+</body>
+</html>
