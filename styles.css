@@ -116,6 +116,7 @@ button{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 	text-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(9px);
+	cursor: none;
 }
 
 button:hover{
@@ -162,10 +163,15 @@ button:hover{
 	font-size:150%;
 }
 
+.label{
+	cursor: none;
+}
+
 .submitbutton{
 	align-self:center;
 	border-radius:6px;
 	font-size: 150%;
+	cursor: none;
 }
 
 textarea {
