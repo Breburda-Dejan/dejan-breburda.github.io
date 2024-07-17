@@ -2,8 +2,9 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
 	<meta name="description" content="Sie suchen informationen über den Berühmt berüchtigten Dejan Breburda, hier finden Sie alles was ihr Herz begehrt, von Dejans Projekten, bis zu seinen Skills.">
+	<meta name="keywords" content="Dejan Breburda, Breburda Dejan, Dejan, Breburda, HTL Mössingerstraße, Peraugymnasium, buchhaendler, Buchhändler, Geschichte, Oliver und Renee, dejan@breburda.at, projects, programming, Python, JavaScript, Java, C++, C#, C">
 	<link rel="apple-touch-icon" sizes="180x180" href="/breburda.at.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="https://breburda.at/breburda.at.png">
 	<link rel="shortcut icon" type="image/png" sizes="16x16" href="https://breburda.at/breburda.at.png">
@@ -22,24 +23,38 @@
     <div class="container">
         <h1 class="gradient-text">Dejan Breburda</h1>
         <div class="section" id="main-info">
-            <h2 class="gradient-text">Main Info</h2>
-            <div class="info-item"><strong>Age:</strong> <span id="age"></span></div>
-            <div class="info-item"><strong>Birthday:</strong> 29.01.2006</div>
-            <div class="info-item"><strong>Location:</strong> Austria</div>
-			<div class="info-item"><strong>Email:</strong> dejan@breburda.at</div>
-			<div class="info-item"><strong>Github:</strong> <a href="https://github.com/Breburda-Dejan">Breburda-Dejan</a></div>
+			<div itemscope itemtype="https://schema.org/Person" class="row">
+				<meta itemprop="author" content="Dejan Breburda">
+				<h2 class="gradient-text">Main Info</h2>
+				<div class="col-sm-8 col-6 col-md-9 col-lg-10">
+					<div class="info-item"><strong>Age:</strong> <span id="age"></span></div>
+					<div class="info-item"><strong>Birthday:</strong> 29.01.2006</div>
+					<div class="info-item"><strong>Location:</strong> Austria</div>
+					<div itemprop="email" class="info-item"><strong>Email:</strong> dejan@breburda.at</div>
+					<div class="info-item"><strong>Github:</strong> <a href="https://github.com/Breburda-Dejan">Breburda-Dejan</a></div>
+				</div>
+				<div class="col-sm-2 col-4">
+					<img src="breburda.at.png" width="150" alt="Ein Bild von Dejan Breburda">
+				</div>
+			</div>
         </div>
         <div class="section" id="about-me">
-            <h2 class="gradient-text">About Me</h2>
-            <p>Hallo! Ich bin Dejan Breburda, <span id="age2"></span> Jahre alt und lebe in Österreich. Derzeit besuche ich noch die Schule und programmiere leidenschaftlich gerne in meiner Freizeit. Mein Fokus liegt auf Python, aber ich arbeite auch mit anderen Programmiersprachen wie JavaScript, C++, C, C# und Java. Programmieren ist für mich nicht nur ein Hobby, sondern auch eine Möglichkeit, kreative Lösungen für komplexe Probleme zu finden. Ich freue mich darauf, neue Technologien zu erkunden und innovative Projekte zu realisieren.</p>
-        </div>
+			<div itemscope itemtype="https://schema.org/Person">
+				<h2 class="gradient-text">About Me</h2>
+				<p>Hallo! Ich bin Dejan Breburda, <span id="age2"></span> Jahre alt und lebe in Österreich. Derzeit besuche ich noch die Schule und programmiere leidenschaftlich gerne in meiner Freizeit. Mein Fokus liegt auf Python, aber ich arbeite auch mit anderen Programmiersprachen wie JavaScript, C++, C, C# und Java. Programmieren ist für mich nicht nur ein Hobby, sondern auch eine Möglichkeit, kreative Lösungen für komplexe Probleme zu finden. Ich freue mich darauf, neue Technologien zu erkunden und innovative Projekte zu realisieren.</p>
+			</div>
+		</div>
         <div class="section" id="projects">
             <h2 class="gradient-text">My Projects</h2>
 			<div class="container">
 				<div class="row">
 					<div class="projectcard col-sm-5 col-md-3" onclick = "window.location.href='buchhaendler.html';">
-						<h3 class="gradient-text">Der Buchhändler</h2>
-						<p>Diese Geschichte habe ich während meines Praktikums geschrieben, da mir langweilig war.</p>
+						<div itemscope itemtype="https://schema.org/CreativeWork">
+							<h2 itemprop="name" class="gradient-text">Der Buchhändler</h2>
+							<p itemprop="description">Diese Geschichte habe ich während meines Praktikums geschrieben, da mir langweilig war.</p>
+							<meta itemprop="dateCreated" content="2024-07-8">
+						</div>
+
 					</div>
 					<div class="col-0 col-sm-1 col-md-1"></div>
 				</div>
@@ -73,7 +88,7 @@
             </div>
         </div>
 		
-		<div class="section feedback-container" id="feedback">
+		<div class="section feedback-container gradient-text" id="feedback">
 			<h2 class"gradient-text">Feedback</h2>
 			<button class="gradient-text submitbutton" onclick="window.location.href='voting.html';">Zum Feedback</button>
     </div>
