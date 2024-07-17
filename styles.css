@@ -170,7 +170,6 @@ textarea:focus {
 	outline: none;
 }
 
-
 .stars {
 	display:flex;
 	flex-direction: row-reverse;
