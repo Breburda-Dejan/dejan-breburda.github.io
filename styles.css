@@ -15,6 +15,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+	min-height: 100vh;
+	position: relative;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
@@ -175,10 +177,10 @@ button:hover{
 }
 
 .footer {
-   position:flex;
+   position:absolute;
+   font-size:15px;
    bottom:0;
    width:100%;
-   height:20px;
 }
 
 textarea {
