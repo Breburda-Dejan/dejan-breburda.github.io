@@ -4,6 +4,7 @@ var userfriendliness;
 var quality;
 var interactivity;
 var message;
+var username;
 
 
 
@@ -15,8 +16,11 @@ function submit(){
 	quality = document.querySelector('input[name="quality"]:checked');
 	interactivity = document.querySelector('input[name="interactivity"]:checked');
 	message = document.getElementById("feedbackText");
+	username = document.getElementById("feedbackName");
 	
 	if (!(design === null || creativity === null || userfriendliness === null || quality === null || interactivity === null)){
+		if (message === null) message.value = "";
+		if (username === null || username.value === "") username.value = "Anonym";
 		sendMessage();
 	}
 	else{
@@ -29,14 +33,7 @@ function sendMessage() {
 	
 	const xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://trigger.macrodroid.com/9447f3bf-2f81-41e9-97b5-173bf12f6773/feedback");
-	const body = JSON.stringify({
-	  design: design.value,
-	  creativity: creativity.value,
-	  userfriendliness: userfriendliness.value,
-	  quality: quality.value,
-	  interactivity: interactivity.value,
-	  message: message.value
-	});
+	var body = "--------------------------\nNeues Feedback von "+username.value+"\nDesign: "+design.value+" Sterne\nKreativität: "+ creativity.value+" Sterne\nBenutzerfreundlichkeit: "+ userfriendliness.value+" Sterne\nInhaltliche Qualität: "+quality.value+" Sterne\nInteraktivität: "+interactivity.value+" Sterne\nNachricht: "+message.value;
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 201) {
 		console.log(JSON.parse(xhr.responseText));
