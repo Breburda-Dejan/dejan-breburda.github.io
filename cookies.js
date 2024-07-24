@@ -3,11 +3,12 @@ const counter = document.getElementById('counter');
 const myimage = document.getElementById("myimage");
 var cookieCount = 0;
 var imagerotate = 0;
+var maxcookiescount = 5;
 
 for (const cookie of cookies) {
 	cookie.addEventListener('click', () => {
 		cookieCount++;
-		counter.textContent = `🍪 ${cookieCount}`;
+		counter.textContent = `🍪 ${cookieCount}/${maxcookiescount}`;
 		counter.style.display = "block";
 		const counterRect = counter.getBoundingClientRect();
 		const cookieRect = cookie.getBoundingClientRect();
