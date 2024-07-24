@@ -23,12 +23,19 @@
 </head>
 <body>
 	<script src="scripts.js" defer></script>
-<script src="particles.js" defer></script>
+	<script src="particles.js" defer></script>
+	<script src="cookies.js" defer></script>
     <canvas id="canvas-background"></canvas>
     <div id="interactive-cursor"></div>
     <div class="container">
         <h1 class="gradient-text">Dejan Breburda</h1>
         <div class="section" id="main-info">
+			<div class="vonhover">
+				<div class="cookie" id="cookie" style="margin-left:200px;transform:translateY(260px) translateX(100px)">🍪</div>
+			</div>
+			<div class="vonhover">
+				<div class="cookie" id="cookie" style="margin-left:200px;transform:translateY(1700px) translateX(100px)">🍪</div>
+			</div>
 			<div itemscope itemtype="https://schema.org/Person" class="row">
 				<meta itemprop="author" content="Dejan Breburda">
 				<h2 class="gradient-text">Main Info</h2>
@@ -38,9 +45,11 @@
 					<div class="info-item"><strong>Location:</strong> Austria</div>
 					<div itemprop="email" class="info-item"><strong>Email:</strong> dejan@breburda.at</div>
 					<div class="info-item"><strong>Github:</strong> <a href="https://github.com/Breburda-Dejan">Breburda-Dejan</a></div>
+					<div id="counter">🍪 0</div>
 				</div>
 				<div class="col-sm-2 col-4">
-					<img src="breburda.png" width="150" alt="Ein Bild von Dejan Breburda">
+					<div class="cookie" id="cookie2" style="margin-bottom:40px;margin-left:40px;">🍪</div>
+					<img class="foldable" id="myimage" src="breburda.png" width="150" alt="Ein Bild von Dejan Breburda" onclick="foldelement(this.id)">
 				</div>
 			</div>
         </div>
@@ -55,6 +64,9 @@
 		</div>
         <div class="section" id="projects">
             <h2 class="gradient-text">My Projects</h2>
+			<div class="vonhover">
+				<div class="cookie" id="cookie" style="margin-left:200px;transform:translateY(-40px);">🍪</div>
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="projectcard col-sm-5 col-md-3" onclick = "window.location.href='buchhaendler.html';">
@@ -75,6 +87,7 @@
 				</div>
 			</div>
         </div>
+		<div class="cookie" id="cookie" style="margin-top:480px">🍪</div>
         <div class="section" id="skills">
             <h2 class="gradient-text">Skills</h2>
             <div class="skill-item">
