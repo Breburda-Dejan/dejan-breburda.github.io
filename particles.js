@@ -128,14 +128,15 @@ document.querySelectorAll('body').forEach(section => {
 		cursory = -2000;
 	});
 });
+
 window.addEventListener('load', () => {
 	anime({
 		targets: '.section',
 		translateY: [50, 0],
 		opacity: [0, 1],
-		delay: anime.stagger(200),
+		delay: anime.stagger(50),
 		easing: 'easeOutExpo',
-		duration: 1500
+		duration: 500
 	});
 
 	anime({
