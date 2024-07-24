@@ -117,8 +117,8 @@ document.addEventListener('mousemove', (e) => {
 document.querySelectorAll('body').forEach(section => {
 	section.addEventListener('mouseenter', () => {
 		cursor.style.transform = 'scale(1)';
-		cursor.style.width = '15px';
-		cursor.style.height = '15px';
+		cursor.style.width = '1rem';
+		cursor.style.height = '1rem';
 	});
 	section.addEventListener('mouseleave', () => {
 		cursor.style.transform = 'scale(0)';
