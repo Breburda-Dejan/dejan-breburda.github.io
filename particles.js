@@ -132,11 +132,10 @@ document.querySelectorAll('body').forEach(section => {
 window.addEventListener('load', () => {
 	anime({
 		targets: '.section',
-		translateY: [50, 0],
+		scale:[1.5, 1],
 		opacity: [0, 1],
-		delay: anime.stagger(50),
 		easing: 'easeOutExpo',
-		duration: 500
+		duration: 1500
 	});
 
 	anime({

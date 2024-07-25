@@ -50,6 +50,17 @@ h1, h2 {
 	z-index:2;
 }
 
+.section2 {
+    background-color: rgba(30, 30, 30, 0.6);
+    padding: 1.875rem;
+    border-radius: 1rem;
+    margin-bottom: 1.875rem;
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(0.3125rem);
+	z-index:2;
+}
+
 
 .sectioncenter {
     background-color: rgba(30, 30, 30, 0.6);
@@ -65,8 +76,8 @@ h1, h2 {
     backdrop-filter: blur(0.3125rem);
 }
 
-.section:hover {
-    transform: translateY(-0.3125rem) scale(1.1);
+.section2:hover {
+    transform: translateY(-0.3125rem);
     box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.3);
 }
 
