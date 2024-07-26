@@ -46,8 +46,11 @@ h1, h2 {
     box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(0.3125rem);
-	opacity:0;
 	z-index:2;
+}
+
+.section .scalechange{
+	opacity:0;
 }
 
 .section2 {
@@ -234,7 +237,6 @@ button:hover{
    padding-bottom: 0.1875rem;
    z-index:200;
 }
-
 
 textarea {
 	width: 80%;

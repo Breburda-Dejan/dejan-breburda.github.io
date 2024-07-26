@@ -106,7 +106,7 @@ function animateParticles() {
 
 createParticles();
 for (let i = 0; i < particles.length; i++) {
-	particles[i].opacity =0;
+	particles[i].opacity = 0;
 }
 	
 window.addEventListener('resize', () => {
@@ -136,26 +136,5 @@ document.querySelectorAll('body').forEach(section => {
 		cursor.style.height = '0px';
 		cursorx = -2000;
 		cursory = -2000;
-	});
-});
-
-window.addEventListener('load', () => {
-	anime({
-		targets: '.section',
-		scale:[1.2, 1],
-		opacity: [0.3, 1],
-		easing: 'easeInExpo',
-		duration: 800,
-		complete: function(anim){
-			animateParticles();
-		}
-	});
-
-	anime({
-		targets: '.skill-progress',
-		width: (el) => [10,el.style.with],
-		easing: 'easeInOutQuart',
-		delay: anime.stagger(100),
-		duration: 1500
 	});
 });

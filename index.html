@@ -25,11 +25,12 @@
 	<script src="scripts.js" defer></script>
 	<script src="particles.js" defer></script>
 	<script src="cookies.js" defer></script>
+	<script src="onload.js" defer></script>
     <canvas id="canvas-background"></canvas>
     <div id="interactive-cursor"></div>
     <div class="container">
         <h1 class="gradient-text">Dejan Breburda</h1>
-        <div class="section" id="main-info">
+        <div class="section scalechange" id="main-info">
 			<div class="vonhover">
 				<div class="cookie" id="cookie" style="margin-left:12.5rem;transform:translateY(16.25rem) translateX(6.25rem)">🍪</div>
 			</div>
@@ -50,7 +51,7 @@
 				</div>
 			</div>
         </div>
-        <div class="section" id="about-me">
+        <div class="section scalechange" id="about-me">
 			<div itemscope itemtype="https://schema.org/Person">
 				<h2 class="gradient-text">About Me</h2>
 				<p>Hallo! Ich bin Dejan Breburda, <span id="age2"></span> Jahre alt und lebe in Österreich. Derzeit besuche ich noch die HTL Mössingerstraße. In meiner Freizeit
@@ -59,7 +60,7 @@
 				zu realisieren.</p>
 			</div>
 		</div>
-        <div class="section" id="projects">
+        <div class="section scalechange" id="projects">
             <h2 class="gradient-text">My Projects</h2>
 			<div class="vonhover">
 				<div class="cookie" id="cookie" style="margin-left:12.5rem;transform:translateY(-2.5rem);">🍪</div>
@@ -81,10 +82,11 @@
 							<meta itemprop="dateCreated" content="2024-07-18">
 						</div>
 					</div>
+					<div class="col-0 col-sm-1 col-md-1" onclick = "window.location.href='blankbackground.html';"></div>
 				</div>
 			</div>
         </div>
-        <div class="section" id="skills">
+        <div class="section scalechange" id="skills">
             <h2 class="gradient-text">Skills</h2>
             <div class="skill-item">
                 <p>Python</p>
@@ -117,7 +119,7 @@
 		<div class="vonhover">
 			<div class="cookie" id="cookie" style="margin-left:20rem;margin-top:7rem;z-index:1;">🍪</div>
 		</div>
-		<div class="section feedback-container gradient-text" id="feedback">
+		<div class="section scalechange feedback-container gradient-text" id="feedback">
 			<button class="gradient-text submitbutton" onclick="window.location.href='voting.html';">Zum Feedback</button>
 		</div>
     </div>
