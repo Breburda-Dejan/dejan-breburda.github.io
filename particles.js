@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 const particles = [];
 
 function particleCount(){
-	return Math.round((window.innerWidth / 1000)* 200);
+	return Math.round((window.innerWidth / 1000)* 130);
 }
 
 class Particle {
@@ -18,6 +18,7 @@ class Particle {
 		this.speedX = (Math.random() - 0.5) * 0.4;
 		this.speedY = (Math.random() - 0.5) * 0.4;
 		this.color = `hsl(${Math.random() * 360}, 50%, 50%)`;
+		this.opacity = 1;
 	}
 
 	update() {
@@ -32,9 +33,11 @@ class Particle {
 
 	draw() {
 		ctx.fillStyle = this.color;
+		ctx.globalAlpha = this.opacity;
 		ctx.beginPath();
 		ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
 		ctx.fill();
+		ctx.restore();
 	}
 }
 
@@ -54,6 +57,10 @@ function animateParticles() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	let currentfeet = 0;
 	for (let i = 0; i < particles.length; i++) {
+		if(particles[i].opacity < 1){
+			particles[i].opacity += 0.01;
+			console.log(particles[i].opacity);
+		}
 		particles[i].update();
 		particles[i].draw();
 		const dxc = particles[i].x - cursorx;
@@ -98,8 +105,10 @@ function animateParticles() {
 }
 
 createParticles();
-animateParticles();
-
+for (let i = 0; i < particles.length; i++) {
+	particles[i].opacity =0;
+}
+	
 window.addEventListener('resize', () => {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
@@ -112,6 +121,7 @@ document.addEventListener('mousemove', (e) => {
 	cursory = e.clientY-10;
 	cursor.style.left = cursorx + 'px';
 	cursor.style.top = cursory + 'px';
+	cursor.style.opacity = 1;
 });
 
 document.querySelectorAll('body').forEach(section => {
@@ -132,10 +142,13 @@ document.querySelectorAll('body').forEach(section => {
 window.addEventListener('load', () => {
 	anime({
 		targets: '.section',
-		scale:[1.5, 1],
-		opacity: [0, 1],
-		easing: 'easeOutExpo',
-		duration: 1500
+		scale:[1.2, 1],
+		opacity: [0.3, 1],
+		easing: 'easeInExpo',
+		duration: 800,
+		complete: function(anim){
+			animateParticles();
+		}
 	});
 
 	anime({

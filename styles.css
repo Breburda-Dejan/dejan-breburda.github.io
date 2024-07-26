@@ -199,6 +199,7 @@ button:hover{
     mix-blend-mode: difference;
     z-index: 9999;
     transition: width 0.3s ease, height 0.3s ease;
+	opacity: 0;
 }
 
 
@@ -233,6 +234,7 @@ button:hover{
    padding-bottom: 0.1875rem;
    z-index:200;
 }
+
 
 textarea {
 	width: 80%;
