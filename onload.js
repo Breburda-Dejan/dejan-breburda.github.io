@@ -1,10 +1,11 @@
 window.addEventListener('load', () => {
 	anime({
 		targets: '.scalechange',
-		scale:[1.2, 1],
-		opacity: [0.3, 1],
+		scale:[1.05, 1],
+		opacity: [0.4, 1],
 		easing: 'easeInExpo',
-		duration: 800,
+		duration: 500,
+		delay: anime.stagger(100),
 		complete: function(anim){
 			animateParticles();
 		}
