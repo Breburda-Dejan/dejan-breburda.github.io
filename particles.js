@@ -50,8 +50,8 @@ function createParticles() {
 
 let cursorx = -2000;
 let cursory = -2000;
-const maxfeet = 10;
-const maxconnections = 10;
+const maxfeet = 20;
+const maxconnections = 20;
 
 function animateParticles() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
