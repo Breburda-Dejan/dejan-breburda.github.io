@@ -59,7 +59,6 @@ function animateParticles() {
 	for (let i = 0; i < particles.length; i++) {
 		if(particles[i].opacity < 1){
 			particles[i].opacity += 0.01;
-			console.log(particles[i].opacity);
 		}
 		particles[i].update();
 		particles[i].draw();
