@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="hamburgermenu-styles.css">
 
 </head>
-<body onload="animateParticles()">
+<body>
 	<script src="particles2.js" defer></script>
     <canvas id="canvas-background"></canvas>
     <div id="interactive-cursor"></div>
@@ -39,7 +39,7 @@
             <h2>Particle Settings</h2>
             <div class="control-group">
                 <label for="particleCount">Particle Count: <span id="particleCountValue"></span></label>
-                <input type="range" id="particleCount" min="50" max="1000" step="10">
+                <input type="range" id="particleCount" min="0" max="1000" step="10">
             </div>
             <div class="control-group">
                 <label for="particleSize">Particle Size: <span id="particleSizeValue"></span></label>

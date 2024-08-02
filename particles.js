@@ -50,8 +50,8 @@ function createParticles() {
 
 let cursorx = -2000;
 let cursory = -2000;
-const maxfeet = 10;
-const maxconnections = 10;
+const maxfeet = 20;
+const maxconnections = 20;
 
 function animateParticles() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -59,7 +59,6 @@ function animateParticles() {
 	for (let i = 0; i < particles.length; i++) {
 		if(particles[i].opacity < 1){
 			particles[i].opacity += 0.01;
-			console.log(particles[i].opacity);
 		}
 		particles[i].update();
 		particles[i].draw();

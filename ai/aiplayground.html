@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Sculptor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #1a1a2e;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .control-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .control-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .control-button.active {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .control-button svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+        .control-button span {
+            font-size: 12px;
+            text-align: center;
+        }
+        #instructions {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+	<script src="script.js" defer></script>
+    <div id="controls">
+        <div class="control-button" id="addCircle">
+            <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="currentColor"/>
+            </svg>
+            <span>Kreis</span>
+        </div>
+        <div class="control-button" id="addSquare">
+            <svg viewBox="0 0 100 100">
+                <rect x="10" y="10" width="80" height="80" fill="currentColor"/>
+            </svg>
+            <span>Quadrat</span>
+        </div>
+        <div class="control-button" id="addTriangle">
+            <svg viewBox="0 0 100 100">
+                <polygon points="50,10 90,90 10,90" fill="currentColor"/>
+            </svg>
+            <span>Dreieck</span>
+        </div>
+        <div class="control-button" id="toggleGravity">
+            <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="30" r="20" fill="currentColor"/>
+                <path d="M30,70 Q50,90 70,70" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span>Gravitation</span>
+        </div>
+        <div class="control-button" id="toggleWalls">
+            <svg viewBox="0 0 100 100">
+                <rect x="10" y="10" width="80" height="80" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span>Wände</span>
+        </div>
+        <div class="control-button" id="reset">
+            <svg viewBox="0 0 100 100">
+                <path d="M20 50 A30 30 0 1 1 80 50 M80 50 L60 30 M80 50 L60 70" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span>Zurücksetzen</span>
+        </div>
+    </div>
+    <div id="instructions">
+        Klicken und ziehen Sie, um Objekte zu bewegen. Doppelklicken Sie auf ein Objekt, um es zu zerstören.
+    </div>
+</body>
+</html>
