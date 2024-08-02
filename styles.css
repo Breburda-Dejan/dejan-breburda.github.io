@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #BB86FC;
-    --secondary-color: #03DAC6;
-    
-    --bg-color: #EFEFEF;
+	--cursor-color: #03DAC6;
+	
+    --primary-color: #000088;
+    --secondary-color: #ee82ee;
+    --bg-color: #CCCCCC;
     --card-bg-color: #FEFEFE;
     --section-bg-color: #AEAEAEB9;
     --text-color: #505050;
@@ -22,6 +23,8 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+		--primary-color: #BB86FC;
+		--secondary-color: #03DAC6;
         --bg-color: #121212;
         --card-bg-color: #1E1E1E;
         --section-bg-color: #1E1E1E99;
@@ -180,7 +183,7 @@ button{
     border-radius: 0.1875rem;
     margin-bottom: 0.1875rem;
     box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
-    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    transition: transform 0.6s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
 	text-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(0.5625rem);
 	cursor: none;
@@ -243,7 +246,7 @@ button:hover{
     width: 0.9375rem;
     height: 0.9375rem;
     border-radius: 50%;
-    background-color: var(--secondary-color);
+    background-color: var(--cursor-color);
     position: fixed;
     pointer-events: none;
     mix-blend-mode: difference;
@@ -267,7 +270,6 @@ button:hover{
 	border-radius:0.9375rem;
 	font-size: 150%;
 	cursor: none;
-	transition: border-radius 0.3s ease;
 }
 
 .submitbutton:hover{
@@ -292,7 +294,7 @@ textarea {
 	padding: 0.9375rem;
 	border: 0.125rem solid #ddd;
 	border-radius: 0.375rem;
-	font-size: 10.375rem;
+	font-size: 1.25rem;
 	transition: border-color 0.3s ease;
 }
 textarea:focus {
