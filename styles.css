@@ -1,6 +1,16 @@
 :root {
 	--cursor-color: #03DAC6;
 	
+	--primary-color: #BB86FC;
+	--secondary-color: #03DAC6;
+	--bg-color: #121212;
+	--card-bg-color: #1E1E1E;
+	--section-bg-color: #1E1E1E99;
+	--text-color: #E0E0E0;
+	--skill-bg-color: #2C2C2C;
+	--star-color: gray;
+	
+	/*
     --primary-color: #000088;
     --secondary-color: #ee82ee;
     --bg-color: #CCCCCC;
@@ -9,6 +19,7 @@
     --text-color: #505050;
     --skill-bg-color: #AFAFAF;
     --star-color: white;
+	*/
 }
 /*
 :root.dark-mode {
