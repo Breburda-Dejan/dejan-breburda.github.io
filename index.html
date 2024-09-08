@@ -1,135 +1,20 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
-	<meta name="description" content="Sie suchen informationen über den Berühmt berüchtigten Dejan Breburda, hier finden Sie alles was ihr Herz begehrt, von Dejans Projekten, bis zu seinen Skills.">
-	<meta name="keywords" content="Dejan Breburda, Breburda Dejan, Dejan, Breburda, buchhaendler, Buchhändler, Geschichte, Oliver und Renee, dejan@breburda.at, projects, programming, Python, JavaScript, Java, C++, C#, C">
-
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#000000">
-
-    <title>Dejan Breburda | Info, Projekte, Skills</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashlight Effect with Background Image</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+            cursor: none;
+        }
+    </style>
 </head>
 <body>
-	<script src="scripts.js" defer></script>
-	<script src="particles.js" defer></script>
-	<script src="cookies.js" defer></script>
-	<script src="onload.js" defer></script>
-    <canvas id="canvas-background"></canvas>
-    <div id="interactive-cursor"></div>
-    <div class="container">
-        <h1 class="gradient-text">Dejan Breburda</h1>
-		<!--
-		<button id="darkModeToggle" aria-label="Toggle dark mode">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFFF00" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path class="sun" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z"/>
-				<path class="moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-			</svg>
-		</button>
-		-->
-        <div class="section scalechange" id="main-info">
-			<div class="vonhover">
-				<div class="cookie" id="cookie" style="margin-left:12.5rem;transform:translateY(16.25rem) translateX(6.25rem)">🍪</div>
-			</div>
-			<div itemscope itemtype="https://schema.org/Person" class="row">
-				<meta itemprop="author" content="Dejan Breburda">
-				<h2 class="gradient-text">Main Info</h2>
-				<div class="col-sm-8 col-6 col-md-9 col-lg-10">
-					<div class="info-item"><strong>Age:</strong> <span id="age"></span></div>
-					<div class="info-item"><strong>Birthday:</strong> 29.01.2006</div>
-					<div class="info-item"><strong>Location:</strong> Austria</div>
-					<div itemprop="email" class="info-item"><strong>Email:</strong> dejan@breburda.at</div>
-					<div class="info-item"><strong>Github:</strong> <a href="https://github.com/Breburda-Dejan">Breburda-Dejan</a></div>
-					<div id="counter">🍪 0</div>
-				</div>
-				<div class="col-sm-2 col-4">
-					<div class="cookie" id="cookie2" style="margin-bottom:2.5rem;margin-left:2.8125rem;">🍪</div>
-					<img class="foldable" id="myimage" src="breburda.png" style="width: 9.375rem;" alt="Ein Bild von Dejan Breburda" onclick="foldelement(this.id)">
-				</div>
-			</div>
-        </div>
-        <div class="section scalechange" id="about-me">
-			<div itemscope itemtype="https://schema.org/Person">
-				<h2 class="gradient-text">About Me</h2>
-				<p>Hallo! Ich bin Dejan Breburda, <span id="age2"></span> Jahre alt und lebe in Österreich. Derzeit besuche ich noch die HTL Mössingerstraße. In meiner Freizeit
-				Programmiere ich sehr gerne. Mein Fokus liegt auf Python, aber ich arbeite auch mit anderen Programmiersprachen wie JavaScript, C++, C, C# und Java. Für mich ist
-				Programmieren nicht nur ein Hobby, sondern auch eine Möglichkeit mich kreativ auszuleben. Ich freue mich darauf, neue Technologien zuerkunden und innovative Projekte
-				zu realisieren.</p>
-			</div>
-		</div>
-        <div class="section scalechange" id="projects">
-            <h2 class="gradient-text">My Projects</h2>
-			<div class="vonhover">
-				<div class="cookie" id="cookie" style="margin-left:12.5rem;transform:translateY(-2.5rem);">🍪</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="projectcard col-sm-5 col-md-3" onclick = "window.location.href='comingsoon.html';">
-						<div itemscope itemtype="https://schema.org/CreativeWork">
-							<h2 itemprop="name" class="gradient-text">Der Buchhändler</h2>
-							<p itemprop="description">Diese Geschichte habe ich während meines Praktikums geschrieben, da mir langweilig war. (Noch nicht fertig)</p>
-							<meta itemprop="dateCreated" content="2024-07-8">
-						</div>
-					</div>
-					<div class="col-0 col-sm-1 col-md-1" onclick = "window.location.href='cbee267d48f85228db6773f67bbb49d2e2103d7e.html';"></div>	<!-- Abstand zwischen zwei projekten damits nit hässlich ausschaut -->
-					<div class="projectcard col-sm-5 col-md-3" onclick = "window.location.href='yloponoM.html';">
-						<div itemscope itemtype="https://schema.org/CreativeWork">
-							<h2 itemprop="name" class="gradient-text">yloponoM</h2>
-							<p itemprop="description">yloponoM ist ein Spiel welches ich während meiner Freizeit in Python Programmiert habe.</p>
-							<meta itemprop="dateCreated" content="2024-07-18">
-						</div>
-					</div>
-					<div class="col-0 col-sm-1 col-md-1" onclick = "window.location.href='blankbackground.html';"></div>
-				</div>
-			</div>
-        </div>
-        <div class="section scalechange" id="skills">
-            <h2 class="gradient-text">Skills</h2>
-            <div class="skill-item">
-                <p>Python</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <p>Java</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <p>JavaScript</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <p>C++</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 45%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <p>C</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 25%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <p>C#</p>
-                <div class="skill-bar"><div class="skill-progress" style="width: 20%;"></div></div>
-            </div>
-        </div>
-		<div class="vonhover">
-			<div class="cookie" id="cookie" style="transform:translateY(-5.6rem)">🍪</div>
-		</div>
-		<div class="vonhover">
-			<div class="cookie" id="cookie" style="margin-left:20rem;margin-top:7rem;z-index:1;">🍪</div>
-		</div>
-		<div class="section scalechange feedback-container" id="feedback">
-			<button class="gradient-text submitbutton" onclick="window.location.href='voting.html';">Zum Feedback</button>
-		</div>
-    </div>
-	<span class="footer">© Copyright 2024 – Alle Inhalte, insbesondere Texte, Fotografien und Grafiken sind urheberrechtlich geschützt. Alle Rechte, einschließlich der Vervielfältigung, Veröffentlichung, Bearbeitung und Übersetzung, bleiben vorbehalten, Breburda Dejan.</span>
 </body>
 </html>
